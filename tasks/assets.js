@@ -1,9 +1,8 @@
-"use strict";
+'use strict'
 
-const $ = require("gulp-load-plugins")();
-const gulp = require("gulp");
-const isProd = !process.env.NODE_ENV || process.env.NODE_ENV == 'prod';
-console.log(isProd)
+const $ = require('gulp-load-plugins')()
+const gulp = require('gulp')
+const isProd = !process.env.NODE_ENV || process.env.NODE_ENV == 'prod'
 
 module.exports = function(options) {
   return function() {
@@ -15,6 +14,6 @@ module.exports = function(options) {
         })
       )
       .pipe($.if(isProd, $.imagemin()))
-      .pipe(gulp.dest(options.dst));
-  };
-};
+      .pipe(gulp.dest(options.dst))
+  }
+}
